@@ -520,12 +520,148 @@
   .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
   .reveal.visible { opacity: 1; transform: translateY(0); }
 
+  /* ─── ALTER EGO ─── */
+  .ae-grid { display: flex; flex-direction: column; gap: 2rem; }
+  .ae-block {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .ae-block-head {
+    border-bottom: 1px solid var(--border);
+    padding: 0.85rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: var(--bg3);
+    flex-wrap: wrap;
+  }
+  .ae-block-icon { font-size: 1rem; }
+  .ae-block-title { font-size: 11px; color: var(--amber); font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; }
+  .ae-block-sub { font-size: 11px; color: var(--text-dim); margin-left: auto; letter-spacing: 0.02em; }
+  .ae-body { padding: 1.5rem; }
+
+  /* Travel */
+  .ae-travel-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .ae-col-label {
+    font-size: 10px; color: var(--text-dim); letter-spacing: 0.1em;
+    text-transform: uppercase; margin-bottom: 0.75rem;
+    padding-bottom: 0.5rem; border-bottom: 1px solid var(--border);
+  }
+  .ae-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+  .ae-tag {
+    font-size: 11px; padding: 4px 10px; border-radius: 3px;
+    border: 1px solid var(--border); color: var(--text-mid);
+    background: rgba(255,255,255,0.03);
+  }
+  .ae-tag.visited { border-color: var(--border-amber); color: var(--amber); background: var(--amber-glow); }
+  .ae-tag.wishlist { border-color: rgba(121,192,255,0.25); color: #79c0ff; background: rgba(121,192,255,0.06); }
+  .ae-travel-note { margin-top: 1.25rem; font-size: 12px; color: var(--text-dim); border-left: 2px solid var(--border); padding-left: 0.9rem; line-height: 1.7; }
+
+  /* Books */
+  .ae-books { display: flex; flex-direction: column; gap: 0.6rem; }
+  .ae-book {
+    display: flex; align-items: center; gap: 0.85rem;
+    padding: 0.75rem 1rem; border: 1px solid var(--border);
+    border-radius: 4px; transition: border-color 0.2s;
+  }
+  .ae-book:hover { border-color: var(--border-amber); }
+  .ae-book-badge {
+    font-size: 10px; padding: 2px 8px; border-radius: 2px;
+    letter-spacing: 0.06em; font-weight: 600; flex-shrink: 0;
+  }
+  .ae-book-badge.reading { background: var(--green-dim); color: var(--green); border: 1px solid rgba(63,185,80,0.3); }
+  .ae-book-badge.done { background: var(--amber-glow); color: var(--amber); border: 1px solid var(--border-amber); }
+  .ae-book-title { font-size: 12.5px; color: var(--text); }
+  .ae-books-count { margin-top: 1rem; font-size: 11px; color: var(--text-dim); padding: 0.6rem 1rem; border: 1px solid var(--border); border-radius: 4px; background: rgba(255,255,255,0.02); }
+  .ae-books-count span { color: var(--amber); }
+
+  /* Sports & Fitness */
+  .ae-activity-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+  .ae-activity-col-label {
+    font-size: 10px; color: var(--text-dim); letter-spacing: 0.1em;
+    text-transform: uppercase; margin-bottom: 0.75rem;
+    padding-bottom: 0.5rem; border-bottom: 1px solid var(--border);
+  }
+  .ae-activity-cards { display: flex; flex-direction: column; gap: 0.5rem; }
+  .ae-activity-card {
+    display: flex; align-items: center; gap: 0.75rem;
+    padding: 0.65rem 1rem; border: 1px solid var(--border);
+    border-radius: 4px; background: rgba(255,255,255,0.02);
+    font-size: 12.5px; color: var(--text-mid);
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .ae-activity-card:hover { border-color: var(--border-amber); color: var(--text); }
+  .ae-activity-card-icon { font-size: 1rem; flex-shrink: 0; }
+
+  /* Life OS */
+  .ae-lifeos { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .ae-lifeos-label {
+    font-size: 10px; color: var(--text-dim); letter-spacing: 0.1em;
+    text-transform: uppercase; margin-bottom: 0.75rem;
+    padding-bottom: 0.5rem; border-bottom: 1px solid var(--border);
+  }
+  .ae-values { display: flex; flex-wrap: wrap; gap: 8px; }
+  .ae-value {
+    padding: 5px 14px; border: 1px solid var(--border-amber);
+    border-radius: 20px; color: var(--amber); font-size: 11px;
+    background: var(--amber-glow); letter-spacing: 0.05em;
+  }
+  .ae-vision-text {
+    color: var(--text-mid); font-size: 13px; line-height: 1.85;
+    border-left: 2px solid var(--amber); padding-left: 1rem;
+  }
+  .ae-vision-text strong { color: var(--amber); font-weight: 500; }
+
+  /* THEME TOGGLE BUTTON */
+  .theme-toggle {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text-dim);
+    font-family: var(--mono);
+    font-size: 11px;
+    padding: 4px 10px;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: color 0.2s, border-color 0.2s, background 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    letter-spacing: 0.05em;
+    flex-shrink: 0;
+  }
+  .theme-toggle:hover { color: var(--amber); border-color: var(--border-amber); background: var(--amber-glow); }
+
+  /* ─── LIGHT MODE ─── */
+  body.light {
+    --bg: #f7f3ee;
+    --bg2: #eee9e1;
+    --bg3: #e5dfd6;
+    --amber: #a85400;
+    --amber-dim: #7a3c00;
+    --amber-glow: rgba(168,84,0,0.10);
+    --green: #1a7f37;
+    --green-dim: rgba(26,127,55,0.15);
+    --text: #1c2128;
+    --text-dim: #6a737d;
+    --text-mid: #3d444d;
+    --border: rgba(0,0,0,0.10);
+    --border-amber: rgba(168,84,0,0.28);
+  }
+  body.light nav { background: rgba(247,243,238,0.94); }
+  body.light::before {
+    background: repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(0,0,0,0.008) 3px, rgba(0,0,0,0.008) 4px);
+  }
+  body.light ::-webkit-scrollbar-thumb { background: var(--amber-dim); }
+
   /* MOBILE */
   @media (max-width: 700px) {
     nav { padding: 0 1rem; }
     .nav-links { display: none; }
     .about-grid, .edu-grid, .contact-grid { grid-template-columns: 1fr; }
     .hero-name { font-size: 2.8rem; }
+    .ae-travel-cols, .ae-activity-grid, .ae-lifeos { grid-template-columns: 1fr; }
   }
 </style>
 </head>
@@ -540,9 +676,13 @@
     <a href="#experience">experience</a>
     <a href="#certifications">certs</a>
     <a href="#metrics">impact</a>
+    <a href="#alter-ego">alter ego</a>
     <a href="#contact">contact</a>
   </ul>
-  <div class="status-dot">SYSTEM LIVE</div>
+  <div style="display:flex;align-items:center;gap:1rem;">
+    <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" aria-label="Toggle theme">☀ DAY</button>
+    <div class="status-dot">SYSTEM LIVE</div>
+  </div>
 </nav>
 
 <!-- HERO -->
@@ -1026,6 +1166,141 @@
   </div>
 </section>
 
+<!-- ALTER EGO -->
+<section id="alter-ego">
+  <div class="cmd-label">alter-ego.sh --run anant --mode human</div>
+  <h2>Beyond the Terminal</h2>
+  <p class="section-sub">The human behind the product. Curiosity, movement, and meaning.</p>
+
+  <div class="ae-grid">
+
+    <!-- TRAVEL -->
+    <div class="ae-block reveal">
+      <div class="ae-block-head">
+        <span class="ae-block-icon">🌍</span>
+        <span class="ae-block-title">Globe Trotter</span>
+        <span class="ae-block-sub">// every node visited, a new perspective loaded</span>
+      </div>
+      <div class="ae-body">
+        <div class="ae-travel-cols">
+          <div>
+            <div class="ae-col-label">Deployed Nodes · Visited</div>
+            <div class="ae-tags">
+              <span class="ae-tag visited">🏴󠁧󠁢󠁳󠁣󠁴󠁿 Scotland</span>
+              <span class="ae-tag visited">🇯🇴 Jordan</span>
+              <span class="ae-tag visited">🇧🇹 Bhutan</span>
+              <span class="ae-tag visited">🇱🇰 Sri Lanka</span>
+              <span class="ae-tag visited">🏴󠁧󠁢󠁥󠁮󠁧󠁿 England</span>
+              <span class="ae-tag visited">🇦🇪 UAE</span>
+              <span class="ae-tag visited">🇹🇭 Thailand</span>
+              <span class="ae-tag visited">🇬🇪 Georgia</span>
+              <span class="ae-tag visited">🇦🇿 Azerbaijan</span>
+            </div>
+          </div>
+          <div>
+            <div class="ae-col-label">Queued Transactions · Wishlist</div>
+            <div class="ae-tags">
+              <span class="ae-tag wishlist">🇪🇬 Egypt</span>
+              <span class="ae-tag wishlist">🇳🇴 Norway</span>
+              <span class="ae-tag wishlist">🇮🇸 Iceland</span>
+              <span class="ae-tag wishlist">🇹🇷 Turkey</span>
+            </div>
+          </div>
+        </div>
+        <div class="ae-travel-note">Drawn to the way life works differently everywhere — the markets, the rhythms, the people. Travel is less about destinations and more about understanding how the world organises itself.</div>
+      </div>
+    </div>
+
+    <!-- BOOKS -->
+    <div class="ae-block reveal">
+      <div class="ae-block-head">
+        <span class="ae-block-icon">📚</span>
+        <span class="ae-block-title">The Bookshelf</span>
+        <span class="ae-block-sub">// reading stack — overflow mode active</span>
+      </div>
+      <div class="ae-body">
+        <div class="ae-books">
+          <div class="ae-book">
+            <span class="ae-book-badge reading">● READING</span>
+            <span class="ae-book-title">Project Hail Mary — Andy Weir</span>
+          </div>
+          <div class="ae-book">
+            <span class="ae-book-badge reading">● READING</span>
+            <span class="ae-book-title">Metamorphosis — Franz Kafka</span>
+          </div>
+          <div class="ae-book">
+            <span class="ae-book-badge reading">● READING</span>
+            <span class="ae-book-title">Rig Veda</span>
+          </div>
+          <div class="ae-book">
+            <span class="ae-book-badge done">✓ LAST READ</span>
+            <span class="ae-book-title">Seven Moons of Maali Almeida — Shehan Karunatilaka</span>
+          </div>
+        </div>
+        <div class="ae-books-count">Lifetime reads: <span>10+</span> books spanning fiction, philosophy, ancient texts, and science.</div>
+      </div>
+    </div>
+
+    <!-- SPORTS & FITNESS -->
+    <div class="ae-block reveal">
+      <div class="ae-block-head">
+        <span class="ae-block-icon">⚡</span>
+        <span class="ae-block-title">Sports &amp; Fitness</span>
+        <span class="ae-block-sub">// keeping the hardware in top shape</span>
+      </div>
+      <div class="ae-body">
+        <div class="ae-activity-grid">
+          <div>
+            <div class="ae-activity-col-label">Sports Played</div>
+            <div class="ae-activity-cards">
+              <div class="ae-activity-card"><span class="ae-activity-card-icon">🏀</span> Basketball</div>
+              <div class="ae-activity-card"><span class="ae-activity-card-icon">🏊</span> Swimming</div>
+              <div class="ae-activity-card"><span class="ae-activity-card-icon">🏏</span> Cricket</div>
+            </div>
+          </div>
+          <div>
+            <div class="ae-activity-col-label">Fitness Routine</div>
+            <div class="ae-activity-cards">
+              <div class="ae-activity-card"><span class="ae-activity-card-icon">🧘</span> Yoga</div>
+              <div class="ae-activity-card"><span class="ae-activity-card-icon">🏃</span> Running</div>
+              <div class="ae-activity-card"><span class="ae-activity-card-icon">💪</span> Bodyweight Exercises</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- LIFE OS -->
+    <div class="ae-block reveal">
+      <div class="ae-block-head">
+        <span class="ae-block-icon">🧭</span>
+        <span class="ae-block-title">Life OS</span>
+        <span class="ae-block-sub">// core config &amp; runtime vision</span>
+      </div>
+      <div class="ae-body">
+        <div class="ae-lifeos">
+          <div>
+            <div class="ae-lifeos-label">Core Values</div>
+            <div class="ae-values">
+              <span class="ae-value">Empathy</span>
+              <span class="ae-value">Equality</span>
+              <span class="ae-value">Respect</span>
+              <span class="ae-value">Sustainability</span>
+            </div>
+          </div>
+          <div>
+            <div class="ae-lifeos-label">Life Vision</div>
+            <div class="ae-vision-text">
+              Utilise knowledge to give something to society that brings <strong>change for good</strong> — building inclusive, <strong>sustainable</strong> systems that leave the world a little better than I found it.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 <!-- CONTACT -->
 <section id="contact">
   <div class="cmd-label">contact.sh --init anant-avinashi</div>
@@ -1089,6 +1364,20 @@
 </footer>
 
 <script>
+  // Theme toggle
+  function toggleTheme() {
+    const isLight = document.body.classList.toggle('light');
+    document.getElementById('themeToggle').textContent = isLight ? '☾ NIGHT' : '☀ DAY';
+    localStorage.setItem('theme', isLight ? 'light' : 'dark');
+  }
+  (function() {
+    if (localStorage.getItem('theme') === 'light') {
+      document.body.classList.add('light');
+      const btn = document.getElementById('themeToggle');
+      if (btn) btn.textContent = '☾ NIGHT';
+    }
+  })();
+
   // Scroll reveal
   const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {
