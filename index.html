@@ -1,0 +1,1154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Anant Avinashi — FinTech Product Leader</title>
+<meta name="description" content="FinTech professional leveraging technology to build products that make financial life simpler for the masses." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #080b10;
+    --bg2: #0d1117;
+    --bg3: #111820;
+    --amber: #f5a623;
+    --amber-dim: #c47d0e;
+    --amber-glow: rgba(245,166,35,0.12);
+    --green: #3fb950;
+    --green-dim: rgba(63,185,80,0.2);
+    --text: #e6edf3;
+    --text-dim: #7d8590;
+    --text-mid: #b1bac4;
+    --border: rgba(255,255,255,0.06);
+    --border-amber: rgba(245,166,35,0.25);
+    --mono: 'JetBrains Mono', monospace;
+    --sans: 'Syne', sans-serif;
+  }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--mono);
+    font-size: 14px;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+  ::selection { background: var(--amber-glow); color: var(--amber); }
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: var(--bg); }
+  ::-webkit-scrollbar-thumb { background: var(--amber-dim); border-radius: 2px; }
+
+  /* SCANLINE OVERLAY */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.03) 2px, rgba(0,0,0,0.03) 4px);
+    pointer-events: none;
+    z-index: 9999;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: rgba(8,11,16,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 52px;
+  }
+  .nav-logo {
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--amber);
+    font-weight: 600;
+    letter-spacing: 0.05em;
+  }
+  .nav-logo span { color: var(--text-dim); font-weight: 400; }
+  .nav-links { display: flex; gap: 0; list-style: none; }
+  .nav-links a {
+    color: var(--text-dim);
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    padding: 0.5rem 1rem;
+    transition: color 0.2s;
+    border-right: 1px solid var(--border);
+  }
+  .nav-links a:first-child { border-left: 1px solid var(--border); }
+  .nav-links a:hover { color: var(--amber); }
+  .status-dot {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    color: var(--green);
+    letter-spacing: 0.05em;
+  }
+  .status-dot::before {
+    content: '';
+    width: 6px; height: 6px;
+    background: var(--green);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+
+  /* SECTIONS */
+  section { padding: 5rem 0; max-width: 1100px; margin: 0 auto; padding-left: 2rem; padding-right: 2rem; }
+  section:first-of-type { padding-top: 8rem; }
+
+  /* SECTION HEADER COMMAND */
+  .cmd-label {
+    font-size: 11px;
+    color: var(--amber);
+    font-family: var(--mono);
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .cmd-label::before { content: '$'; color: var(--text-dim); }
+  .cmd-label::after { content: ''; flex: 1; height: 1px; background: var(--border); margin-left: 1rem; }
+
+  h2 {
+    font-family: var(--sans);
+    font-size: clamp(1.8rem, 4vw, 2.4rem);
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 0.5rem;
+  }
+  .section-sub {
+    color: var(--text-dim);
+    font-size: 13px;
+    margin-bottom: 3rem;
+  }
+
+  /* ─── HERO ─── */
+  #hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 52px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-bottom: 0;
+  }
+  .hero-terminal {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    max-width: 680px;
+    margin-bottom: 3rem;
+    box-shadow: 0 0 40px rgba(245,166,35,0.04);
+  }
+  .term-bar {
+    background: var(--bg3);
+    border-bottom: 1px solid var(--border);
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .term-dot { width: 10px; height: 10px; border-radius: 50%; }
+  .term-dot.r { background: #ff5f56; }
+  .term-dot.y { background: #ffbd2e; }
+  .term-dot.g { background: #27c93f; }
+  .term-title { flex: 1; text-align: center; font-size: 11px; color: var(--text-dim); letter-spacing: 0.05em; }
+  .term-body { padding: 1.2rem 1.5rem; font-size: 13px; }
+  .term-line { margin: 2px 0; }
+  .term-prompt { color: var(--amber); }
+  .term-cmd { color: var(--text); }
+  .term-out { color: var(--text-dim); }
+  .term-val { color: var(--green); }
+  .term-key { color: #79c0ff; }
+  .term-cursor {
+    display: inline-block;
+    width: 8px; height: 14px;
+    background: var(--amber);
+    vertical-align: middle;
+    animation: blink 1s step-end infinite;
+  }
+  @keyframes blink { 0%,100% { opacity:1; } 50% { opacity:0; } }
+
+  .hero-tag {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    color: var(--amber);
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+  .hero-name {
+    font-family: var(--sans);
+    font-size: clamp(3rem, 8vw, 5.5rem);
+    font-weight: 800;
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    margin-bottom: 1rem;
+  }
+  .hero-name .accent { color: var(--amber); }
+  .hero-role {
+    font-size: 13px;
+    color: var(--text-dim);
+    margin-bottom: 2rem;
+    max-width: 540px;
+    line-height: 1.7;
+  }
+  .hero-role strong { color: var(--text-mid); font-weight: 500; }
+  .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 3rem; }
+  .btn-primary {
+    background: var(--amber);
+    color: #000;
+    border: none;
+    padding: 0.7rem 1.5rem;
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .btn-primary:hover { background: #e8960a; transform: translateY(-1px); }
+  .btn-secondary {
+    background: transparent;
+    color: var(--amber);
+    border: 1px solid var(--border-amber);
+    padding: 0.7rem 1.5rem;
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s;
+  }
+  .btn-secondary:hover { background: var(--amber-glow); border-color: var(--amber); }
+  .hero-links { display: flex; gap: 1.5rem; }
+  .hero-links a {
+    color: var(--text-dim);
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    transition: color 0.2s;
+  }
+  .hero-links a:hover { color: var(--amber); }
+  .hero-links a::before { content: '→ '; color: var(--amber); }
+
+  /* TYPING ANIMATION */
+  .typed { display: inline-block; }
+
+  /* ─── ABOUT ─── */
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .about-terminal {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  .about-desc { color: var(--text-mid); font-size: 13px; line-height: 1.85; }
+  .about-desc p { margin-bottom: 1rem; }
+  .about-desc strong { color: var(--amber); font-weight: 500; }
+  .meta-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-top: 1.5rem; }
+  .meta-item {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 0.75rem 1rem;
+    font-size: 12px;
+  }
+  .meta-label { color: var(--text-dim); font-size: 11px; margin-bottom: 3px; letter-spacing: 0.04em; }
+  .meta-val { color: var(--amber); font-weight: 600; }
+
+  /* ─── SKILLS ─── */
+  .skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem; }
+  .skill-card {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 1.25rem;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .skill-card:hover { border-color: var(--border-amber); background: var(--bg3); }
+  .skill-cat {
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    color: var(--amber);
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .skill-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+  .skill-tag {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid var(--border);
+    color: var(--text-mid);
+    font-size: 11px;
+    padding: 3px 8px;
+    border-radius: 3px;
+    letter-spacing: 0.02em;
+  }
+  .skill-tag.hi { border-color: var(--border-amber); color: var(--amber); background: var(--amber-glow); }
+
+  /* ─── EXPERIENCE ─── */
+  .exp-timeline { position: relative; padding-left: 2rem; }
+  .exp-timeline::before {
+    content: '';
+    position: absolute;
+    left: 6px; top: 0; bottom: 0;
+    width: 1px;
+    background: var(--border);
+  }
+  .exp-item {
+    position: relative;
+    margin-bottom: 3rem;
+  }
+  .exp-item::before {
+    content: '';
+    position: absolute;
+    left: -1.75rem;
+    top: 8px;
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: var(--bg);
+    border: 2px solid var(--border);
+  }
+  .exp-item.current::before {
+    border-color: var(--amber);
+    background: var(--amber-glow);
+    box-shadow: 0 0 8px rgba(245,166,35,0.4);
+  }
+  .exp-header { display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.5rem; }
+  .exp-role { font-family: var(--sans); font-size: 1rem; font-weight: 700; color: var(--text); }
+  .exp-company { color: var(--amber); font-size: 12px; font-weight: 600; letter-spacing: 0.04em; }
+  .exp-badge {
+    font-size: 10px;
+    padding: 2px 8px;
+    border-radius: 2px;
+    letter-spacing: 0.06em;
+    font-weight: 600;
+  }
+  .exp-badge.live { background: var(--green-dim); color: var(--green); border: 1px solid rgba(63,185,80,0.3); }
+  .exp-badge.done { background: rgba(255,255,255,0.04); color: var(--text-dim); border: 1px solid var(--border); }
+  .exp-meta { font-size: 11px; color: var(--text-dim); margin-bottom: 1rem; letter-spacing: 0.03em; }
+  .exp-bullets { list-style: none; }
+  .exp-bullets li {
+    font-size: 12.5px;
+    color: var(--text-mid);
+    margin-bottom: 0.4rem;
+    padding-left: 1.2rem;
+    position: relative;
+    line-height: 1.7;
+  }
+  .exp-bullets li::before { content: '▸'; color: var(--amber); position: absolute; left: 0; font-size: 10px; top: 3px; }
+  .exp-bullets li strong { color: var(--text); font-weight: 500; }
+  .exp-section-label {
+    font-size: 10px;
+    color: var(--amber-dim);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin: 0.75rem 0 0.25rem;
+  }
+
+  /* ─── CERTIFICATIONS ─── */
+  .cert-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1rem; }
+  .cert-card {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 1.25rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    transition: border-color 0.2s;
+  }
+  .cert-card:hover { border-color: var(--border-amber); }
+  .cert-icon {
+    width: 36px; height: 36px;
+    border: 1px solid var(--border-amber);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    flex-shrink: 0;
+    background: var(--amber-glow);
+  }
+  .cert-name { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 3px; }
+  .cert-issuer { font-size: 11px; color: var(--text-dim); }
+  .cert-status { font-size: 10px; color: var(--green); letter-spacing: 0.06em; margin-top: 6px; }
+
+  /* ─── METRICS ─── */
+  .metrics-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem; }
+  .metric-card {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 1.5rem;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .metric-card:hover { border-color: var(--border-amber); transform: translateY(-2px); }
+  .metric-icon { font-size: 1.4rem; margin-bottom: 0.75rem; }
+  .metric-val { font-family: var(--sans); font-size: 2.2rem; font-weight: 800; color: var(--amber); line-height: 1; margin-bottom: 0.4rem; }
+  .metric-label { font-size: 12px; font-weight: 600; color: var(--text); margin-bottom: 0.4rem; }
+  .metric-desc { font-size: 11px; color: var(--text-dim); line-height: 1.6; }
+
+  /* ─── EDUCATION ─── */
+  .edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .edu-card {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 1.5rem;
+    transition: border-color 0.2s;
+  }
+  .edu-card:hover { border-color: var(--border-amber); }
+  .edu-degree { font-family: var(--sans); font-size: 1rem; font-weight: 700; color: var(--text); margin-bottom: 0.3rem; }
+  .edu-uni { font-size: 12px; color: var(--amber); margin-bottom: 0.3rem; font-weight: 600; }
+  .edu-year { font-size: 11px; color: var(--text-dim); margin-bottom: 1rem; }
+  .edu-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+  .edu-tag {
+    font-size: 10px;
+    border: 1px solid var(--border);
+    color: var(--text-dim);
+    padding: 2px 8px;
+    border-radius: 2px;
+  }
+
+  /* ─── VOLUNTARY ─── */
+  .vol-list { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
+  .vol-item {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 1rem 1.25rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    font-size: 13px;
+    color: var(--text-mid);
+    gap: 1rem;
+  }
+  .vol-role { color: var(--text); font-weight: 500; margin-bottom: 2px; }
+  .vol-date { font-size: 11px; color: var(--text-dim); letter-spacing: 0.03em; flex-shrink: 0; }
+
+  /* ─── CONTACT ─── */
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .contact-terminal {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  .contact-links { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
+  .contact-links li a {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--text-mid);
+    text-decoration: none;
+    font-size: 12px;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    background: var(--bg2);
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .contact-links li a:hover { border-color: var(--border-amber); color: var(--amber); }
+  .contact-links li a span.label { color: var(--text-dim); font-size: 10px; letter-spacing: 0.06em; }
+  .contact-links li a span.val { color: inherit; }
+  .form-group { margin-bottom: 1rem; }
+  .form-label { font-size: 11px; color: var(--amber); letter-spacing: 0.05em; margin-bottom: 0.4rem; display: block; }
+  .form-input, .form-textarea {
+    width: 100%;
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    color: var(--text);
+    font-family: var(--mono);
+    font-size: 13px;
+    padding: 0.6rem 0.85rem;
+    border-radius: 3px;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .form-input:focus, .form-textarea:focus { border-color: var(--border-amber); }
+  .form-textarea { resize: vertical; min-height: 100px; }
+  .form-btn {
+    background: var(--amber);
+    color: #000;
+    border: none;
+    padding: 0.65rem 1.5rem;
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    cursor: pointer;
+    transition: background 0.2s;
+    width: 100%;
+    border-radius: 3px;
+  }
+  .form-btn:hover { background: #e8960a; }
+
+  /* FOOTER */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 2rem;
+    text-align: center;
+    font-size: 11px;
+    color: var(--text-dim);
+    letter-spacing: 0.04em;
+  }
+  footer span { color: var(--amber); }
+
+  /* SCROLL REVEAL */
+  .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* MOBILE */
+  @media (max-width: 700px) {
+    nav { padding: 0 1rem; }
+    .nav-links { display: none; }
+    .about-grid, .edu-grid, .contact-grid { grid-template-columns: 1fr; }
+    .hero-name { font-size: 2.8rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">anant<span>@fintech:~$</span></div>
+  <ul class="nav-links">
+    <a href="#about">about</a>
+    <a href="#skills">skills</a>
+    <a href="#experience">experience</a>
+    <a href="#certifications">certs</a>
+    <a href="#metrics">impact</a>
+    <a href="#contact">contact</a>
+  </ul>
+  <div class="status-dot">SYSTEM LIVE</div>
+</nav>
+
+<!-- HERO -->
+<div id="hero">
+  <div class="hero-terminal">
+    <div class="term-bar">
+      <div class="term-dot r"></div>
+      <div class="term-dot y"></div>
+      <div class="term-dot g"></div>
+      <div class="term-title">anant@finpay-cluster — bash</div>
+    </div>
+    <div class="term-body">
+      <div class="term-line"><span class="term-prompt">$ </span><span class="term-cmd">finpay get engineer anant-avinashi --namespace product</span></div>
+      <div class="term-line"> </div>
+      <div class="term-line"><span class="term-key">Name:</span>           <span class="term-val">Anant Avinashi</span></div>
+      <div class="term-line"><span class="term-key">Role:</span>           <span class="term-val">FinTech Product Leader</span></div>
+      <div class="term-line"><span class="term-key">Experience:</span>     <span class="term-val">13+ Years</span></div>
+      <div class="term-line"><span class="term-key">Status:</span>         <span class="term-val">● AUTHORIZED</span></div>
+      <div class="term-line"><span class="term-key">Location:</span>       <span class="term-val">Bangalore, India</span></div>
+      <div class="term-line"><span class="term-key">Specialization:</span> <span class="term-val">Credit Cards · Payments · Enterprise Onboarding</span></div>
+      <div class="term-line"> </div>
+      <div class="term-line"><span class="term-prompt">$ </span><span class="term-cursor"></span></div>
+    </div>
+  </div>
+
+  <div class="hero-tag">// FinTech Product Management &amp; Consulting</div>
+  <h1 class="hero-name">Anant<br/><span class="accent">Avinashi.</span></h1>
+  <p class="hero-role">
+    FinTech professional leveraging technology to build products that make
+    <strong>financial life simpler for the masses.</strong> Technology Consultant and Product Leader specialising in
+    <strong>Credit Cards, Enterprise Onboarding,</strong> and <strong>Payment Lifecycle Architecture.</strong>
+  </p>
+
+  <div class="hero-btns">
+    <a class="btn-primary" href="mailto:anant1419@gmail.com">→ GET IN TOUCH</a>
+    <a class="btn-secondary" href="https://linkedin.com/in/anantavinashi" target="_blank">LinkedIn Profile</a>
+  </div>
+
+  <div class="hero-links">
+    <a href="mailto:anant1419@gmail.com">anant1419@gmail.com</a>
+    <a href="tel:+919810908599">+91 9810908599</a>
+    <a href="https://linkedin.com/in/anantavinashi" target="_blank">LinkedIn</a>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="cmd-label">payment.lifecycle describe --engineer anant-avinashi</div>
+  <h2>Architect of Frictionless Finance</h2>
+  <p class="section-sub">Building the rails that move money, responsibly.</p>
+
+  <div class="about-grid reveal">
+    <div class="about-terminal">
+      <div class="term-bar">
+        <div class="term-dot r"></div>
+        <div class="term-dot y"></div>
+        <div class="term-dot g"></div>
+        <div class="term-title">profile.sh</div>
+      </div>
+      <div class="term-body" style="font-size:12.5px;">
+        <div class="term-line"><span class="term-prompt">$ </span><span class="term-cmd">whoami</span></div>
+        <div class="term-line"><span class="term-val">anant-avinashi</span></div>
+        <div class="term-line"> </div>
+        <div class="term-line"><span class="term-key">📍 Location:</span>  <span class="term-out">Bangalore, India</span></div>
+        <div class="term-line"><span class="term-key">💼 Exp:</span>       <span class="term-out">13+ Years (Jul 2011 – Present)</span></div>
+        <div class="term-line"><span class="term-key">🎓 M.Sc.:</span>     <span class="term-out">FinTech, Univ. of Strathclyde</span></div>
+        <div class="term-line"><span class="term-key">🔑 Domain:</span>    <span class="term-out">Credit Cards, ISO 8583, EMV</span></div>
+        <div class="term-line"><span class="term-key">🏦 AmEx:</span>      <span class="term-out">3 LOBs · 50+ Stakeholders</span></div>
+        <div class="term-line"><span class="term-key">⚡ Uptime:</span>   <span class="term-val">● AUTHORIZED</span></div>
+        <div class="term-line"> </div>
+        <div class="term-line"><span class="term-prompt">$ </span><span class="term-cursor"></span></div>
+      </div>
+    </div>
+
+    <div>
+      <div class="about-desc">
+        <p>I sit at the intersection of <strong>finance, technology, and product thinking</strong> — translating complex regulatory and business requirements into systems that handle billions of transactions reliably.</p>
+        <p>From defining <strong>ISO 8583 message flows</strong> and EMV card lifecycle architecture to leading enterprise onboarding platforms across multiple Lines of Business at <strong>American Express</strong>, I bridge the gap between domain expertise and delivery.</p>
+        <p>Beyond the corporate world, I actively explore <strong>DeFi, CBDC, and blockchain</strong> through fellowships and open-source contribution — believing that the future of finance is open, programmable, and inclusive.</p>
+      </div>
+      <div class="meta-grid">
+        <div class="meta-item"><div class="meta-label">CURRENT CLIENT</div><div class="meta-val">American Express</div></div>
+        <div class="meta-item"><div class="meta-label">TEAM SIZE MANAGED</div><div class="meta-val">40+ Members</div></div>
+        <div class="meta-item"><div class="meta-label">GLOBAL REACH</div><div class="meta-val">Africa · Gulf · UK</div></div>
+        <div class="meta-item"><div class="meta-label">FRAMEWORKS</div><div class="meta-val">SAFe Agile · PCI DSS</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="cmd-label">iso8583.get skills --profile anant --format yaml</div>
+  <h2>Technical Arsenal</h2>
+  <p class="section-sub">Domain depth meets delivery toolkit.</p>
+
+  <div class="skills-grid reveal">
+    <div class="skill-card">
+      <div class="skill-cat">// Core Domain</div>
+      <div class="skill-tags">
+        <span class="skill-tag hi">Credit Cards</span>
+        <span class="skill-tag hi">ISO 8583</span>
+        <span class="skill-tag hi">EMV</span>
+        <span class="skill-tag hi">Payment Lifecycle</span>
+        <span class="skill-tag">FinTech Use-Cases</span>
+        <span class="skill-tag">Banking &amp; Payments</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-cat">// Compliance &amp; Risk</div>
+      <div class="skill-tags">
+        <span class="skill-tag hi">PCI DSS</span>
+        <span class="skill-tag hi">PSD2</span>
+        <span class="skill-tag">Basel IV</span>
+        <span class="skill-tag">Open Banking</span>
+        <span class="skill-tag">Banking Risks</span>
+        <span class="skill-tag">SEPA Payments</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-cat">// Product &amp; Delivery</div>
+      <div class="skill-tags">
+        <span class="skill-tag hi">Product Management</span>
+        <span class="skill-tag hi">SAFe Agile</span>
+        <span class="skill-tag hi">Product Roadmap</span>
+        <span class="skill-tag">JIRA</span>
+        <span class="skill-tag">Aha!</span>
+        <span class="skill-tag">Figma</span>
+        <span class="skill-tag">Backlog Prioritisation</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-cat">// Enterprise Onboarding</div>
+      <div class="skill-tags">
+        <span class="skill-tag hi">AmEx Corporate Cards</span>
+        <span class="skill-tag hi">Legal Entity Onboarding</span>
+        <span class="skill-tag">Consumer Cards</span>
+        <span class="skill-tag">Risk &amp; Underwriting</span>
+        <span class="skill-tag">Field Mapping</span>
+        <span class="skill-tag">Architecture Flows</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-cat">// Blockchain &amp; Web3</div>
+      <div class="skill-tags">
+        <span class="skill-tag hi">Blockchain</span>
+        <span class="skill-tag hi">DeFi</span>
+        <span class="skill-tag hi">CBDC</span>
+        <span class="skill-tag">Cryptocurrency</span>
+        <span class="skill-tag">Solidity</span>
+        <span class="skill-tag">Hyperledger</span>
+        <span class="skill-tag">ReFi</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-cat">// Tech &amp; AI</div>
+      <div class="skill-tags">
+        <span class="skill-tag hi">Generative AI</span>
+        <span class="skill-tag hi">Responsible AI</span>
+        <span class="skill-tag">Python</span>
+        <span class="skill-tag">Go</span>
+        <span class="skill-tag">Solidity</span>
+        <span class="skill-tag">AI &amp; ML Foundations</span>
+        <span class="skill-tag">WhatsApp Banking</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="cmd-label">txn.history get experience --all --sort=desc</div>
+  <h2>Work Experience</h2>
+  <p class="section-sub">A ledger of impact across FinTech, Banking, and Consulting.</p>
+
+  <div class="exp-timeline reveal">
+
+    <!-- AmEx / Zinios -->
+    <div class="exp-item current">
+      <div class="exp-header">
+        <div>
+          <div class="exp-company">Zinios Edge · deputed to American Express</div>
+          <div class="exp-role">Product Owner / Consultant</div>
+        </div>
+        <span class="exp-badge live">● RUNNING</span>
+      </div>
+      <div class="exp-meta">Feb 2025 – Present · Gurugram, India</div>
+      <div class="exp-section-label">Product &amp; Platform Leadership</div>
+      <ul class="exp-bullets">
+        <li>Lead enterprise onboarding platform initiatives across <strong>3 Lines of Business</strong>: Corporate Legal Entity, Corporate Cards, and Consumer Cards.</li>
+        <li>Drive requirement elicitation and closure across acquisition lifecycle stages.</li>
+        <li>Define architecture flows, system field mappings, and end-to-end process designs across onboarding, risk, and servicing ecosystems.</li>
+      </ul>
+      <div class="exp-section-label">Enterprise Delivery &amp; Governance</div>
+      <ul class="exp-bullets">
+        <li>Coordinate delivery across <strong>15+ internal and external teams</strong> within a SAFe Agile construct.</li>
+        <li>Manage stakeholder ecosystem of <strong>50+ members</strong> across business, technology, and operations.</li>
+        <li>Create executive dashboards and risk summaries for VP- and CEO-level governance forums.</li>
+      </ul>
+      <div class="exp-section-label">Knowledge Initiatives</div>
+      <ul class="exp-bullets">
+        <li>Conducted expert-level sessions on <strong>Credit Card Lifecycle</strong> and platform architecture — received appreciation from cross-functional participants.</li>
+      </ul>
+    </div>
+
+    <!-- SEPA -->
+    <div class="exp-item">
+      <div class="exp-header">
+        <div>
+          <div class="exp-company">SEPA Cyber Tech Banking Innovations</div>
+          <div class="exp-role">SME – Product Owner</div>
+        </div>
+        <span class="exp-badge done">✓ SETTLED</span>
+      </div>
+      <div class="exp-meta">Apr 2024 – Jun 2024</div>
+      <ul class="exp-bullets">
+        <li>Translated business requirements into user stories with detailed acceptance criteria. Led sprint planning and backlog prioritisation.</li>
+        <li>Leveraged expertise in <strong>Banking, Finance, and Blockchain</strong> to shape product strategy for SEPA payments.</li>
+        <li>Mapped user journeys and created wireframes using Figma to enhance UX.</li>
+        <li>Mentored Product Owners on Blockchain integration.</li>
+      </ul>
+    </div>
+
+    <!-- Affinsys -->
+    <div class="exp-item">
+      <div class="exp-header">
+        <div>
+          <div class="exp-company">Affinsys AI</div>
+          <div class="exp-role">Project / Product Manager</div>
+        </div>
+        <span class="exp-badge done">✓ SETTLED</span>
+      </div>
+      <div class="exp-meta">Apr 2021 – Jan 2023 · Global</div>
+      <ul class="exp-bullets">
+        <li>Launched <strong>CannyPay</strong>, a cross-border payment platform supporting 4 currencies.</li>
+        <li>Delivered <strong>250% revenue growth</strong> through new digital product initiatives.</li>
+        <li>Led end-to-end management of WhatsApp Banking Wallet, Digital Onboarding, Invoice-to-Pay, and Request-to-Pay.</li>
+        <li>Managed <strong>40+ members</strong> (developers, DevOps, QA, BAs) across a global Agile delivery model.</li>
+        <li>Handled clients across <strong>Africa</strong> (i&amp;M Bank, Stanbic, FCB, KOIL), <strong>Gulf</strong> (DIB, Lebara), and <strong>UK</strong> (CannyPay).</li>
+        <li>Ensured ISO security compliance and developed an insurance chatbot for Kenya Orient Insurance (KOIL).</li>
+      </ul>
+    </div>
+
+    <!-- Namaste Credit -->
+    <div class="exp-item">
+      <div class="exp-header">
+        <div>
+          <div class="exp-company">Namaste Credit</div>
+          <div class="exp-role">Senior Python Developer</div>
+        </div>
+        <span class="exp-badge done">✓ SETTLED</span>
+      </div>
+      <div class="exp-meta">Mar 2019 – Mar 2020</div>
+      <ul class="exp-bullets">
+        <li>Conceptualised a pre-approved loan product tailored for SMEs to enhance access to financing.</li>
+        <li>Managed cross-functional teams to generate standardised reports evaluating <strong>financial statements, CIBIL scores, and ITRs</strong>.</li>
+        <li>Served as knowledge bridge between technology and finance teams — analysed P&amp;L, balance sheets, and income statements.</li>
+      </ul>
+    </div>
+
+    <!-- FIS -->
+    <div class="exp-item">
+      <div class="exp-header">
+        <div>
+          <div class="exp-company">FIS</div>
+          <div class="exp-role">Business Analyst</div>
+        </div>
+        <span class="exp-badge done">✓ SETTLED</span>
+      </div>
+      <div class="exp-meta">Feb 2015 – Aug 2017</div>
+      <ul class="exp-bullets">
+        <li>Led team on the <strong>American Express Corporate Credit Cards</strong> project and credit card disputes.</li>
+        <li>Successfully implemented Amex Vicinity across multiple browsers.</li>
+        <li>Spearheaded QA frameworks for ACH, Wire Transfer, and Bill Pay for FIS's core banking product, Business eBanking.</li>
+      </ul>
+    </div>
+
+    <!-- TCS -->
+    <div class="exp-item">
+      <div class="exp-header">
+        <div>
+          <div class="exp-company">Tata Consultancy Services (TCS)</div>
+          <div class="exp-role">System Engineer</div>
+        </div>
+        <span class="exp-badge done">✓ SETTLED</span>
+      </div>
+      <div class="exp-meta">Jul 2011 – Jan 2015</div>
+      <ul class="exp-bullets">
+        <li>Executed QA activities for <strong>American Express, CVS PBM,</strong> and CVS Rx Connect.</li>
+        <li>Prepared and tracked project documentation — BRD, Use Cases, Traceability Matrices, and Sign-off Reports.</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="certifications">
+  <div class="cmd-label">kyc.verify credentials --user anant-avinashi</div>
+  <h2>Certifications</h2>
+  <p class="section-sub">Formally verified expertise across product, agile, blockchain, and finance.</p>
+
+  <div class="cert-grid reveal">
+    <div class="cert-card">
+      <div class="cert-icon">📋</div>
+      <div>
+        <div class="cert-name">Product Management</div>
+        <div class="cert-issuer">Aha! — Product Roadmap Platform</div>
+        <div class="cert-status">✓ VERIFIED</div>
+      </div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-icon">⚙️</div>
+      <div>
+        <div class="cert-name">Agile with Atlassian JIRA</div>
+        <div class="cert-issuer">Atlassian / Coursera</div>
+        <div class="cert-status">✓ VERIFIED</div>
+      </div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-icon">🔗</div>
+      <div>
+        <div class="cert-name">DeFi Talents Fellow</div>
+        <div class="cert-issuer">Frankfurt School Blockchain Center</div>
+        <div class="cert-status">✓ VERIFIED</div>
+      </div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-icon">🌱</div>
+      <div>
+        <div class="cert-name">ReFi Talents Fellow</div>
+        <div class="cert-issuer">Frankfurt School Blockchain Center</div>
+        <div class="cert-status">✓ VERIFIED</div>
+      </div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-icon">⛓️</div>
+      <div>
+        <div class="cert-name">IBM Blockchain Foundation Developer</div>
+        <div class="cert-issuer">IBM</div>
+        <div class="cert-status">✓ VERIFIED</div>
+      </div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-icon">📊</div>
+      <div>
+        <div class="cert-name">Reading Financial Statements</div>
+        <div class="cert-issuer">Corporate Financial Institute (CFI)</div>
+        <div class="cert-status">✓ VERIFIED</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- METRICS -->
+<section id="metrics">
+  <div class="cmd-label">finpay metrics --user anant --output impact-report</div>
+  <h2>Impact by the Numbers</h2>
+  <p class="section-sub">Measurable outcomes from high-stakes product and delivery work.</p>
+
+  <div class="metrics-grid reveal">
+    <div class="metric-card">
+      <div class="metric-icon">🚀</div>
+      <div class="metric-val" data-target="250" data-suffix="%">0%</div>
+      <div class="metric-label">Revenue Growth</div>
+      <div class="metric-desc">Delivered through new digital product initiatives including WhatsApp Banking, CannyPay, and Invoice-to-Pay at Affinsys AI.</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-icon">👥</div>
+      <div class="metric-val" data-target="50" data-suffix="+">0+</div>
+      <div class="metric-label">Stakeholders Managed</div>
+      <div class="metric-desc">Cross-functional stakeholder ecosystem spanning business, technology, and operations at American Express.</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-icon">🔗</div>
+      <div class="metric-val" data-target="15" data-suffix="+">0+</div>
+      <div class="metric-label">Teams Coordinated</div>
+      <div class="metric-desc">Internal and external delivery teams aligned within a SAFe Agile PI construct for AmEx enterprise onboarding.</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-icon">🏦</div>
+      <div class="metric-val" data-target="3" data-suffix=" LOBs">0 LOBs</div>
+      <div class="metric-label">Lines of Business</div>
+      <div class="metric-desc">Led platform initiatives across Corporate Legal Entity, Corporate Cards, and Consumer Cards simultaneously at AmEx.</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-icon">🌍</div>
+      <div class="metric-val" data-target="40" data-suffix="+">0+</div>
+      <div class="metric-label">Team Members Led</div>
+      <div class="metric-desc">Managed developers, DevOps, QA, and BAs across Africa, Gulf, and UK in a global Agile delivery model.</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-icon">💳</div>
+      <div class="metric-val" data-target="4" data-suffix=" CCY">0 CCY</div>
+      <div class="metric-label">CannyPay Currencies</div>
+      <div class="metric-desc">Cross-border payment platform launched supporting 4 currencies, handling international money movement for UK markets.</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-icon">🏆</div>
+      <div class="metric-val" data-target="13" data-suffix="+ Yrs">0+ Yrs</div>
+      <div class="metric-label">Industry Experience</div>
+      <div class="metric-desc">Spanning TCS, FIS, Namaste Credit, Affinsys AI, SEPA, and American Express — from QA engineer to Product Leader.</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-icon">🌐</div>
+      <div class="metric-val" data-target="8" data-suffix="+ Clients">0+</div>
+      <div class="metric-label">Global Clients</div>
+      <div class="metric-desc">i&amp;M Bank, Stanbic, FCB, KOIL, DIB, Lebara, CannyPay, and American Express — banking, insurance, and telecom domains.</div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="cmd-label">credentials.get education --sort=desc</div>
+  <h2>Academic Foundation</h2>
+  <p class="section-sub">Finance meets technology at postgraduate level.</p>
+
+  <div class="edu-grid reveal">
+    <div class="edu-card">
+      <div class="edu-degree">M.Sc. Financial Technology</div>
+      <div class="edu-uni">University of Strathclyde, Glasgow, UK</div>
+      <div class="edu-year">2017 – 2018</div>
+      <div class="edu-tags">
+        <span class="edu-tag">FinTech</span>
+        <span class="edu-tag">Blockchain</span>
+        <span class="edu-tag">Enterprise Pathway Challenge — Top 6</span>
+        <span class="edu-tag">Credit Risk Analysis</span>
+        <span class="edu-tag">SME Lending</span>
+      </div>
+    </div>
+    <div class="edu-card">
+      <div class="edu-degree">B.Tech. Electrical Engineering</div>
+      <div class="edu-uni">DCRUST, Haryana, India</div>
+      <div class="edu-year">2007 – 2011</div>
+      <div class="edu-tags">
+        <span class="edu-tag">Electrical Engineering</span>
+        <span class="edu-tag">Systems Design</span>
+        <span class="edu-tag">Technical Foundation</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Award -->
+  <div style="margin-top:1rem; background:var(--bg2); border:1px solid var(--border-amber); border-radius:6px; padding:1.25rem; display:flex; align-items:flex-start; gap:1rem;">
+    <div style="font-size:1.5rem; flex-shrink:0;">🥇</div>
+    <div>
+      <div style="font-size:13px; font-weight:600; color:var(--amber); margin-bottom:4px;">Top 6 — Strathclyde Enterprise Pathway Challenge · May 2018</div>
+      <div style="font-size:12px; color:var(--text-dim); line-height:1.7;">Developed a credit risk analysis model to make loan amounts easily accessible to SMEs — competing against teams from across the university's entrepreneurship programme.</div>
+    </div>
+  </div>
+
+  <!-- Voluntary -->
+  <div style="margin-top:3rem;">
+    <div class="cmd-label" style="margin-bottom:1.5rem;">community.get voluntary --user anant</div>
+    <h2 style="font-size:1.5rem; margin-bottom:0.5rem;">Community &amp; Volunteering</h2>
+    <p class="section-sub">Giving back to the ecosystems that built me.</p>
+    <ul class="vol-list">
+      <li class="vol-item">
+        <div>
+          <div class="vol-role">Member — Hyperledger India Chapter</div>
+          <div style="font-size:12px; color:var(--text-dim);">Contributing to open-source blockchain adoption and enterprise distributed ledger standards in India.</div>
+        </div>
+        <div class="vol-date">May 2020 – Present</div>
+      </li>
+      <li class="vol-item">
+        <div>
+          <div class="vol-role">Blockchain Consultant — Snapper FutureTech</div>
+          <div style="font-size:12px; color:var(--text-dim);">Advised on blockchain implementation strategy for emerging FinTech solutions.</div>
+        </div>
+        <div class="vol-date">Aug 2020 – Apr 2021</div>
+      </li>
+      <li class="vol-item">
+        <div>
+          <div class="vol-role">Fellow — European Carbon Offset Tokenisation Association (ECOTA)</div>
+          <div style="font-size:12px; color:var(--text-dim);">Engaged in tokenisation of carbon offsets — bridging DeFi and sustainable finance (ReFi) globally.</div>
+        </div>
+        <div class="vol-date">Apr 2024 – Present</div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="cmd-label">contact.sh --init anant-avinashi</div>
+  <h2>Let's Build Something</h2>
+  <p class="section-sub">Open to product consulting, FinTech collaborations, and conversations about payments and AI.</p>
+
+  <div class="contact-grid reveal">
+    <div>
+      <div class="contact-terminal">
+        <div class="term-bar">
+          <div class="term-dot r"></div>
+          <div class="term-dot y"></div>
+          <div class="term-dot g"></div>
+          <div class="term-title">contact.sh</div>
+        </div>
+        <div class="term-body" style="font-size:12.5px;">
+          <div class="term-line"><span class="term-prompt">$ </span><span class="term-cmd">contact --anant</span></div>
+          <div class="term-line"> </div>
+          <div class="term-line"><span class="term-key">📧 Email:</span>  <span class="term-val">anant1419@gmail.com</span></div>
+          <div class="term-line"><span class="term-key">📱 Phone:</span>  <span class="term-val">+91 9810908599</span></div>
+          <div class="term-line"><span class="term-key">📍 City:</span>   <span class="term-val">Bangalore, India</span></div>
+          <div class="term-line"><span class="term-key">🕐 Response:</span> <span class="term-val">&lt; 24 hours</span></div>
+          <div class="term-line"> </div>
+          <div class="term-line"><span class="term-out">// Open to</span></div>
+          <div class="term-line"><span class="term-val">Product Consulting</span></div>
+          <div class="term-line"><span class="term-val">FinTech Advisory</span></div>
+          <div class="term-line"><span class="term-val">Payments &amp; Credit Card Architecture</span></div>
+          <div class="term-line"><span class="term-val">Blockchain / DeFi Collaborations</span></div>
+          <div class="term-line"> </div>
+          <div class="term-line"><span class="term-prompt">$ </span><span class="term-cursor"></span></div>
+        </div>
+      </div>
+
+      <ul class="contact-links" style="margin-top:1rem;">
+        <li><a href="mailto:anant1419@gmail.com"><span class="label">EMAIL →</span> <span class="val">anant1419@gmail.com</span></a></li>
+        <li><a href="tel:+919810908599"><span class="label">PHONE →</span> <span class="val">+91 9810908599</span></a></li>
+        <li><a href="https://linkedin.com/in/anantavinashi" target="_blank"><span class="label">LINKEDIN →</span> <span class="val">linkedin.com/in/anantavinashi</span></a></li>
+      </ul>
+    </div>
+
+    <div>
+      <div class="form-group">
+        <label class="form-label">// YOUR NAME</label>
+        <input class="form-input" type="text" placeholder="John Doe" />
+      </div>
+      <div class="form-group">
+        <label class="form-label">// EMAIL ADDRESS</label>
+        <input class="form-input" type="email" placeholder="hello@company.com" />
+      </div>
+      <div class="form-group">
+        <label class="form-label">// MESSAGE</label>
+        <textarea class="form-textarea" placeholder="Tell me about your project or opportunity..."></textarea>
+      </div>
+      <button class="form-btn" onclick="handleSubmit()">→ SEND MESSAGE</button>
+    </div>
+  </div>
+</section>
+
+<footer>
+  Built with precision &amp; a lot of <span>ISO 8583</span> · © 2026 <span>Anant Avinashi</span>
+</footer>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.08 });
+  reveals.forEach(el => observer.observe(el));
+
+  // Counter animation
+  function animateCounter(el) {
+    const target = parseInt(el.dataset.target);
+    const suffix = el.dataset.suffix || '';
+    const duration = 1500;
+    const step = target / (duration / 16);
+    let current = 0;
+    const timer = setInterval(() => {
+      current = Math.min(current + step, target);
+      el.textContent = Math.floor(current) + suffix;
+      if (current >= target) clearInterval(timer);
+    }, 16);
+  }
+
+  const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateCounter(entry.target);
+        counterObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  document.querySelectorAll('[data-target]').forEach(el => counterObserver.observe(el));
+
+  // Form
+  function handleSubmit() {
+    const btn = document.querySelector('.form-btn');
+    btn.textContent = '✓ MESSAGE SENT';
+    btn.style.background = '#3fb950';
+    setTimeout(() => {
+      btn.textContent = '→ SEND MESSAGE';
+      btn.style.background = '';
+    }, 3000);
+  }
+
+  // Active nav
+  const sections = document.querySelectorAll('section[id], #hero');
+  const links = document.querySelectorAll('.nav-links a');
+  const scrollSpy = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        links.forEach(a => a.style.color = '');
+        const active = document.querySelector(`.nav-links a[href="#${e.target.id}"]`);
+        if (active) active.style.color = 'var(--amber)';
+      }
+    });
+  }, { threshold: 0.4 });
+  sections.forEach(s => scrollSpy.observe(s));
+</script>
+</body>
+</html>
