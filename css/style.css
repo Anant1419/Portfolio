@@ -130,15 +130,12 @@ h2 {
 
 /* TYPING ANIMATION */
 .hero-typed-wrap {
-  display: flex;
-  align-items: center;
-  gap: 0;
   font-size: 13px;
   color: var(--text-dim);
   margin-bottom: 2rem;
   letter-spacing: 0.04em;
 }
-.hero-typed-prefix { color: var(--text-dim); }
+.hero-typed-prefix { color: var(--text-dim); margin-right: 0.4rem; }
 .hero-typed-text { color: var(--amber); font-weight: 600; }
 .hero-typed-cursor {
   display: inline-block;
@@ -220,11 +217,11 @@ body.beyond-work .nav-links a:not([href="#contact"]) { opacity: 0.3; pointer-eve
   margin-bottom: 1rem;
 }
 .hero-name {
-  font-family: var(--sans);
+  font-family: 'Sora', var(--sans);
   font-size: clamp(3rem, 8vw, 5.5rem);
   font-weight: 800;
   line-height: 0.95;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.03em;
   background: linear-gradient(135deg, #79c0ff 0%, #58a6ff 50%, #1f6feb 100%);
   -webkit-background-clip: text;
   background-clip: text;
