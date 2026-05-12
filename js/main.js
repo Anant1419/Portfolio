@@ -1,3 +1,38 @@
+// View toggle (Work ↔ Beyond Work)
+function toggleView() {
+  const isBeyond = document.body.classList.toggle('beyond-work');
+  const btn = document.getElementById('viewToggle');
+  btn.textContent = isBeyond ? '← Work' : 'Beyond Work →';
+  btn.classList.toggle('active', isBeyond);
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  localStorage.setItem('view', isBeyond ? 'beyond' : 'work');
+}
+(function () {
+  if (localStorage.getItem('view') === 'beyond') {
+    document.body.classList.add('beyond-work');
+    const btn = document.getElementById('viewToggle');
+    if (btn) { btn.textContent = '← Work'; btn.classList.add('active'); }
+  }
+})();
+
+// Typewriter
+const roles = ['FinTech Product Manager', 'Blockchain Evangelist', 'Environmentalist'];
+let roleIndex = 0, charIndex = 0, deleting = false;
+function typeWriter() {
+  const el = document.getElementById('typedText');
+  if (!el) return;
+  const current = roles[roleIndex];
+  if (!deleting) {
+    el.textContent = current.slice(0, ++charIndex);
+    if (charIndex === current.length) { deleting = true; setTimeout(typeWriter, 1800); return; }
+  } else {
+    el.textContent = current.slice(0, --charIndex);
+    if (charIndex === 0) { deleting = false; roleIndex = (roleIndex + 1) % roles.length; }
+  }
+  setTimeout(typeWriter, deleting ? 55 : 90);
+}
+typeWriter();
+
 // Theme toggle
 function toggleTheme() {
   const isLight = document.body.classList.toggle('light');

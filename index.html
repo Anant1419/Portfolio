@@ -7,7 +7,7 @@
 <meta name="description" content="FinTech professional leveraging technology to build products that make financial life simpler for the masses." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
@@ -25,7 +25,7 @@
   </ul>
   <div style="display:flex;align-items:center;gap:0.75rem;">
     <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" aria-label="Toggle theme">☀</button>
-    <a href="#alter-ego" class="nav-alter-ego">Alter Ego →</a>
+    <button class="nav-alter-ego" id="viewToggle" onclick="toggleView()">Beyond Work →</button>
     <div class="status-dot">SYSTEM LIVE</div>
   </div>
 </nav>
@@ -54,12 +54,15 @@
   </div>
 
   <div class="hero-tag">// FinTech Product Management &amp; Consulting</div>
-  <h1 class="hero-name">Anant<br/><span class="accent">Avinashi.</span></h1>
+  <h1 class="hero-name">Anant<br/><span class="accent">Avinashi</span></h1>
   <p class="hero-role">
     FinTech professional leveraging technology to build products that make
-    <strong>financial life simpler for the masses.</strong> Technology Consultant and Product Leader specialising in
-    <strong>Credit Cards, Enterprise Onboarding,</strong> and <strong>Payment Lifecycle Architecture.</strong>
+    <strong>financial life simpler for the masses.</strong>
   </p>
+
+  <div class="hero-typed-wrap">
+    <span class="hero-typed-prefix">I am a </span><span class="hero-typed-text" id="typedText"></span><span class="hero-typed-cursor"></span>
+  </div>
 
   <div class="hero-btns">
     <a class="btn-primary" href="mailto:anant1419@gmail.com">→ GET IN TOUCH</a>
@@ -104,7 +107,7 @@
 
     <div>
       <div class="about-desc">
-        <p>I sit at the intersection of <strong>finance, technology, and product thinking</strong> — translating complex regulatory and business requirements into systems that handle billions of transactions reliably.</p>
+        <p>I sit at the intersection of <strong>finance, technology, and product thinking</strong> — translating complex regulatory and business requirements into systems that handle billions of transactions reliably. A Technology Consultant and Product Leader specialising in <strong>Credit Cards, Enterprise Onboarding,</strong> and <strong>Payment Lifecycle Architecture.</strong></p>
         <p>From defining <strong>ISO 8583 message flows</strong> and EMV card lifecycle architecture to leading enterprise onboarding platforms across multiple Lines of Business at <strong>American Express</strong>, I bridge the gap between domain expertise and delivery.</p>
         <p>Beyond the corporate world, I actively explore <strong>DeFi, CBDC, and blockchain</strong> through fellowships and open-source contribution — believing that the future of finance is open, programmable, and inclusive.</p>
       </div>
@@ -124,75 +127,45 @@
   <h2>Technical Arsenal</h2>
   <p class="section-sub">Domain depth meets delivery toolkit.</p>
 
-  <div class="skills-grid reveal">
-    <div class="skill-card">
-      <div class="skill-cat">// Core Domain</div>
-      <div class="skill-tags">
-        <span class="skill-tag hi">Credit Cards</span>
-        <span class="skill-tag hi">ISO 8583</span>
-        <span class="skill-tag hi">EMV</span>
-        <span class="skill-tag hi">Payment Lifecycle</span>
-        <span class="skill-tag">FinTech Use-Cases</span>
-        <span class="skill-tag">Banking &amp; Payments</span>
-      </div>
+  <div class="yaml-panel reveal">
+    <div class="term-bar">
+      <div class="term-dot r"></div>
+      <div class="term-dot y"></div>
+      <div class="term-dot g"></div>
+      <div class="term-title">skills.yaml</div>
     </div>
-    <div class="skill-card">
-      <div class="skill-cat">// Compliance &amp; Risk</div>
-      <div class="skill-tags">
-        <span class="skill-tag hi">PCI DSS</span>
-        <span class="skill-tag hi">PSD2</span>
-        <span class="skill-tag">Basel IV</span>
-        <span class="skill-tag">Open Banking</span>
-        <span class="skill-tag">Banking Risks</span>
-        <span class="skill-tag">SEPA Payments</span>
-      </div>
-    </div>
-    <div class="skill-card">
-      <div class="skill-cat">// Product &amp; Delivery</div>
-      <div class="skill-tags">
-        <span class="skill-tag hi">Product Management</span>
-        <span class="skill-tag hi">SAFe Agile</span>
-        <span class="skill-tag hi">Product Roadmap</span>
-        <span class="skill-tag">JIRA</span>
-        <span class="skill-tag">Aha!</span>
-        <span class="skill-tag">Figma</span>
-        <span class="skill-tag">Backlog Prioritisation</span>
-      </div>
-    </div>
-    <div class="skill-card">
-      <div class="skill-cat">// Enterprise Onboarding</div>
-      <div class="skill-tags">
-        <span class="skill-tag hi">AmEx Corporate Cards</span>
-        <span class="skill-tag hi">Legal Entity Onboarding</span>
-        <span class="skill-tag">Consumer Cards</span>
-        <span class="skill-tag">Risk &amp; Underwriting</span>
-        <span class="skill-tag">Field Mapping</span>
-        <span class="skill-tag">Architecture Flows</span>
-      </div>
-    </div>
-    <div class="skill-card">
-      <div class="skill-cat">// Blockchain &amp; Web3</div>
-      <div class="skill-tags">
-        <span class="skill-tag hi">Blockchain</span>
-        <span class="skill-tag hi">DeFi</span>
-        <span class="skill-tag hi">CBDC</span>
-        <span class="skill-tag">Cryptocurrency</span>
-        <span class="skill-tag">Solidity</span>
-        <span class="skill-tag">Hyperledger</span>
-        <span class="skill-tag">ReFi</span>
-      </div>
-    </div>
-    <div class="skill-card">
-      <div class="skill-cat">// Tech &amp; AI</div>
-      <div class="skill-tags">
-        <span class="skill-tag hi">Generative AI</span>
-        <span class="skill-tag hi">Responsible AI</span>
-        <span class="skill-tag">Python</span>
-        <span class="skill-tag">Go</span>
-        <span class="skill-tag">Solidity</span>
-        <span class="skill-tag">AI &amp; ML Foundations</span>
-        <span class="skill-tag">WhatsApp Banking</span>
-      </div>
+    <div class="yaml-body">
+      <div class="yaml-line"><span class="yaml-ln">1</span><span class="yaml-content"><span class="yaml-c"># skills.yaml — Anant Avinashi · Technical Arsenal</span></span></div>
+      <div class="yaml-line"><span class="yaml-ln">2</span><span class="yaml-content"><span class="yaml-c"># Updated: 2026-05-12</span></span></div>
+      <div class="yaml-line"><span class="yaml-ln">3</span><span class="yaml-content"> </span></div>
+      <div class="yaml-line"><span class="yaml-ln">4</span><span class="yaml-content"><span class="yaml-k">engineer</span><span class="yaml-p">:</span> <span class="yaml-s">anant-avinashi</span></span></div>
+      <div class="yaml-line"><span class="yaml-ln">5</span><span class="yaml-content"><span class="yaml-k">experience_years</span><span class="yaml-p">:</span> <span class="yaml-n">13</span></span></div>
+      <div class="yaml-line"><span class="yaml-ln">6</span><span class="yaml-content"><span class="yaml-k">domains</span><span class="yaml-p">:</span> <span class="yaml-n">6</span></span></div>
+      <div class="yaml-line"><span class="yaml-ln">7</span><span class="yaml-content"> </span></div>
+      <div class="yaml-line"><span class="yaml-ln">8</span><span class="yaml-content"><span class="yaml-k">skills</span><span class="yaml-p">:</span></span></div>
+      <div class="yaml-line"><span class="yaml-ln">9</span><span class="yaml-content">  <span class="yaml-k">core_domain</span><span class="yaml-p">:</span></span></div>
+      <div class="yaml-line"><span class="yaml-ln">10</span><span class="yaml-content">    <span class="yaml-k">expert</span><span class="yaml-p">:</span>     <span class="yaml-p">[</span> <span class="yaml-v expert">credit-cards</span><span class="yaml-p">,</span> <span class="yaml-v expert">iso-8583</span><span class="yaml-p">,</span> <span class="yaml-v expert">emv</span><span class="yaml-p">,</span> <span class="yaml-v expert">payment-lifecycle</span> <span class="yaml-p">]</span></span></div>
+      <div class="yaml-line"><span class="yaml-ln">11</span><span class="yaml-content">    <span class="yaml-k">proficient</span><span class="yaml-p">:</span> <span class="yaml-p">[</span> <span class="yaml-v">fintech-use-cases</span><span class="yaml-p">,</span> <span class="yaml-v">banking-payments</span> <span class="yaml-p">]</span></span></div>
+      <div class="yaml-line"><span class="yaml-ln">12</span><span class="yaml-content"> </span></div>
+      <div class="yaml-line"><span class="yaml-ln">13</span><span class="yaml-content">  <span class="yaml-k">compliance_risk</span><span class="yaml-p">:</span></span></div>
+      <div class="yaml-line"><span class="yaml-ln">14</span><span class="yaml-content">    <span class="yaml-k">expert</span><span class="yaml-p">:</span>     <span class="yaml-p">[</span> <span class="yaml-v expert">pci-dss</span><span class="yaml-p">,</span> <span class="yaml-v expert">psd2</span> <span class="yaml-p">]</span></span></div>
+      <div class="yaml-line"><span class="yaml-ln">15</span><span class="yaml-content">    <span class="yaml-k">proficient</span><span class="yaml-p">:</span> <span class="yaml-p">[</span> <span class="yaml-v">basel-iv</span><span class="yaml-p">,</span> <span class="yaml-v">open-banking</span><span class="yaml-p">,</span> <span class="yaml-v">banking-risks</span><span class="yaml-p">,</span> <span class="yaml-v">sepa-payments</span> <span class="yaml-p">]</span></span></div>
+      <div class="yaml-line"><span class="yaml-ln">16</span><span class="yaml-content"> </span></div>
+      <div class="yaml-line"><span class="yaml-ln">17</span><span class="yaml-content">  <span class="yaml-k">product_delivery</span><span class="yaml-p">:</span></span></div>
+      <div class="yaml-line"><span class="yaml-ln">18</span><span class="yaml-content">    <span class="yaml-k">expert</span><span class="yaml-p">:</span>     <span class="yaml-p">[</span> <span class="yaml-v expert">product-management</span><span class="yaml-p">,</span> <span class="yaml-v expert">safe-agile</span><span class="yaml-p">,</span> <span class="yaml-v expert">product-roadmap</span> <span class="yaml-p">]</span></span></div>
+      <div class="yaml-line"><span class="yaml-ln">19</span><span class="yaml-content">    <span class="yaml-k">proficient</span><span class="yaml-p">:</span> <span class="yaml-p">[</span> <span class="yaml-v">jira</span><span class="yaml-p">,</span> <span class="yaml-v">aha</span><span class="yaml-p">,</span> <span class="yaml-v">figma</span><span class="yaml-p">,</span> <span class="yaml-v">backlog-prioritisation</span> <span class="yaml-p">]</span></span></div>
+      <div class="yaml-line"><span class="yaml-ln">20</span><span class="yaml-content"> </span></div>
+      <div class="yaml-line"><span class="yaml-ln">21</span><span class="yaml-content">  <span class="yaml-k">enterprise_onboarding</span><span class="yaml-p">:</span></span></div>
+      <div class="yaml-line"><span class="yaml-ln">22</span><span class="yaml-content">    <span class="yaml-k">expert</span><span class="yaml-p">:</span>     <span class="yaml-p">[</span> <span class="yaml-v expert">amex-corporate-cards</span><span class="yaml-p">,</span> <span class="yaml-v expert">legal-entity-onboarding</span> <span class="yaml-p">]</span></span></div>
+      <div class="yaml-line"><span class="yaml-ln">23</span><span class="yaml-content">    <span class="yaml-k">proficient</span><span class="yaml-p">:</span> <span class="yaml-p">[</span> <span class="yaml-v">consumer-cards</span><span class="yaml-p">,</span> <span class="yaml-v">risk-underwriting</span><span class="yaml-p">,</span> <span class="yaml-v">field-mapping</span><span class="yaml-p">,</span> <span class="yaml-v">architecture-flows</span> <span class="yaml-p">]</span></span></div>
+      <div class="yaml-line"><span class="yaml-ln">24</span><span class="yaml-content"> </span></div>
+      <div class="yaml-line"><span class="yaml-ln">25</span><span class="yaml-content">  <span class="yaml-k">blockchain_web3</span><span class="yaml-p">:</span></span></div>
+      <div class="yaml-line"><span class="yaml-ln">26</span><span class="yaml-content">    <span class="yaml-k">expert</span><span class="yaml-p">:</span>     <span class="yaml-p">[</span> <span class="yaml-v expert">blockchain</span><span class="yaml-p">,</span> <span class="yaml-v expert">defi</span><span class="yaml-p">,</span> <span class="yaml-v expert">cbdc</span> <span class="yaml-p">]</span></span></div>
+      <div class="yaml-line"><span class="yaml-ln">27</span><span class="yaml-content">    <span class="yaml-k">proficient</span><span class="yaml-p">:</span> <span class="yaml-p">[</span> <span class="yaml-v">cryptocurrency</span><span class="yaml-p">,</span> <span class="yaml-v">solidity</span><span class="yaml-p">,</span> <span class="yaml-v">hyperledger</span><span class="yaml-p">,</span> <span class="yaml-v">refi</span> <span class="yaml-p">]</span></span></div>
+      <div class="yaml-line"><span class="yaml-ln">28</span><span class="yaml-content"> </span></div>
+      <div class="yaml-line"><span class="yaml-ln">29</span><span class="yaml-content">  <span class="yaml-k">tech_ai</span><span class="yaml-p">:</span></span></div>
+      <div class="yaml-line"><span class="yaml-ln">30</span><span class="yaml-content">    <span class="yaml-k">expert</span><span class="yaml-p">:</span>     <span class="yaml-p">[</span> <span class="yaml-v expert">generative-ai</span><span class="yaml-p">,</span> <span class="yaml-v expert">responsible-ai</span> <span class="yaml-p">]</span></span></div>
+      <div class="yaml-line"><span class="yaml-ln">31</span><span class="yaml-content">    <span class="yaml-k">proficient</span><span class="yaml-p">:</span> <span class="yaml-p">[</span> <span class="yaml-v">python</span><span class="yaml-p">,</span> <span class="yaml-v">go</span><span class="yaml-p">,</span> <span class="yaml-v">ai-ml-foundations</span><span class="yaml-p">,</span> <span class="yaml-v">whatsapp-banking</span> <span class="yaml-p">]</span></span></div>
     </div>
   </div>
 </section>
